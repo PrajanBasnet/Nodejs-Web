@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Bokor&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --white: #fff;
+    --gray-hover: #575757;
+    --dark:rgb(32, 25, 25);
+    --black: #555555;
+
+}
+body{
+    background-image: url('/img/back.png');
+    font-family: "Sour Gummy", serif;
+}
+
+.container{
+    max-width: 928px;
+    margin: auto;
+    padding: 0 10px;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark);
+}
+.navbar .navlist{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    
+
+}
+.logo {
+    text-decoration: none;
+}
+
+.endlogo{
+    text-decoration: none;
+    color: var(--white);
+}
+
+.navbar .navlist a{
+    padding: 12px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--white);    
+    transition:  0.3s;
+    cursor: pointer;
+}
+
+.navbar .navlist a:hover{
+    background-color: var(--gray-hover);
+    text-decoration: underline;
+}
+
+
+/* for post */
+.formContainer{
+    margin-left: 10%;
+    align-items: center;
+}
+input[type="text"]{
+    
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+
+    width: 80%;
+    border-radius: 4px;
+    border: 1px solid black;
+    font-size: 16px;
+    padding: 10px 12px;
+    cursor: pointer;
+}
+@media screen and (max-width: 100px){
+    input[type=text]{
+        width: 100%;
+        margin-top: 0;
+    }
+}
+.btnBlack{
+    background-color: var(--black);
+    font-size: 19px;
+    color: var(--white);
+    text-align: center;
+    padding: 10px 12px;
+    border-radius:10px;
+    text-decoration: none;
+    border: none;   
+}
+.btnBlack:hover{
+    background-color: black;
+
+}

@@ -21,22 +21,15 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 connectDB();
 
-
-app.get('/newBlog',async(req,res) =>{
-  // const newBlog = new Blog({
-  //   title:"ghasitay",
-   
-  // });
-  // newBlog.save();
-  // res.send("Kitten Saved sucessfully");
-
+app.get('/',(req,res)=>{
+  res.render('index');
 })
 
-app.get('/test',(req,res)=>{
+app.get('/postBlog',(req,res)=>{
   res.render('post');
 })
 
-app.post('/rest',(req,res)=>{
+app.post('/postBlog',(req,res)=>{
   let title = req.body.title;
   let author = req.body.author;
   let content = req.body.content;

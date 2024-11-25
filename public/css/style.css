@@ -8,6 +8,7 @@
     --gray-hover: #575757;
     --dark:rgb(32, 25, 25);
     --black: #555555;
+    --red:rgb(161, 31, 31);
 
 }
 body{
@@ -32,7 +33,6 @@ body{
     gap: 15px;
     align-items: center;
     
-
 }
 .logo {
     text-decoration: none;
@@ -95,4 +95,34 @@ input[type="text"]{
 .btnBlack:hover{
     background-color: black;
 
+}
+h3{
+    /* background-color: gray ; */
+    color: white;
+}
+
+.postCard{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color: rgb(155, 120, 120);
+    gap: 10px;
+    padding: 10px 12px;
+    margin: 10px;
+}
+.postDetails{
+    flex: 1;
+}
+
+button{
+    background-color: var(--black);
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    padding:10px 12px;
+    color: var(--white);
+    cursor: pointer;
+}
+.red{
+    background-color: var(--red);
 }

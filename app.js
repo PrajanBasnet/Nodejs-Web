@@ -34,17 +34,38 @@ app.post('/postBlog',(req,res)=>{
   let author = req.body.author;
   let content = req.body.content;
 
-  const newBlog = new Blog({
-    title:title,
-    author:author,
-    content:content
+  const regExp = /[!@#*%'*=/\-]/;
+  if(regExp.test(title) || regExp.test(author) || regExp.test(content)){
+
+    res.status(404).redirect('index');
+  }
+  if(!title || !author || content ){
+    // res.status(404).send("file cannot be empty");
+    res.status(404).redirect('index');
+
+  }
+    const newBlog = new Blog({
+      title:title,
+      author:author,
+      content:content
+      
+    });
+    newBlog.save();
     
-  });
-  newBlog.save();
-  res.send("Saved in databased");
+    res.send("Saved in databased");
 
 
 })
+app.get('/about',async(req,res)=>{
+    const readBlog = await Blog.find();
+    res.render('about',{readBlog});
+  });
+
+
+  app.post('/delete/:id',async(req,res)=>{
+     await Blog.deleteOne({_id: req.params.id});
+     return res.redirect('/about');
+  })
 
 
 app.listen(3000);

@@ -1,0 +1,19 @@
+<h1>Blogs </h1>
+
+<% readBlog.forEach(post =>{ %>
+    <div class="postCard">
+        <div class="postDetails">
+            <h3 class="postH3"><%= post.title %></h3>
+            <p><%= post.author %></p>
+            <p><%= post.createdAt %></p>
+        </div>
+        <div class="btns">
+            <form action="/delete/<%= post.id %>" method="post">
+                <button class="green">Edit</button>
+                <button class="red" name="btn" type="submit" >Delete</button>
+
+            </form>
+        </div>
+    </div>
+
+    <%  }) %> 

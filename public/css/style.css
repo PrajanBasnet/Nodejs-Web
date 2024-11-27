@@ -15,7 +15,10 @@ body{
     background-image: url('/img/back.png');
     font-family: "Sour Gummy", serif;
 }
-
+.horseBack{
+    width: 928px;
+    height: 500px;
+}
 .container{
     max-width: 928px;
     margin: auto;
@@ -82,6 +85,8 @@ input[type="text"]{
         margin-top: 0;
     }
 }
+
+
 .btnBlack{
     background-color: var(--black);
     font-size: 19px;
@@ -125,4 +130,11 @@ button{
 }
 .red{
     background-color: var(--red);
+}
+.btns{
+    display: flex;
+    gap: 10px;
+}
+.titleBlog{
+    text-align: center;
 }

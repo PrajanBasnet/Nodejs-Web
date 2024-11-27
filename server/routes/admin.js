@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Blog = require('../module/Blog');
 
+
 const passport = require('passport');
 const mongoose = require('mongoose');
 
@@ -26,6 +27,18 @@ function isAuthenticated(req,res,next){
         else next('route')
 }
 
+router.get('/register',isAuthenticated, (req,res)=>{
+    res.render('register');
+})
+router.post('/register', (req,res)=>{
+    const adminlog = new adminLogin({
+        userName: req.body.userName,
+        password:req.body.password
+        
+      });
+      adminlog.save();
+    res.redirect('/admin');
+})
 
 router.get('/postBlog', isAuthenticated, async (req,res)=>{
     res.render('post');

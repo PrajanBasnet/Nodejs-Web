@@ -1,16 +1,35 @@
 <div class="formContainer">
 
-    <form action="/postBlog" method="POST">
+    <form action="/register" method="POST">
         <label for="userName">UserName</label>
-        <input type="text" name="username" id="username" >
+        <input type="text" name="userName" id="userName" >
         
         <label for="Password">Password</label>
-        <input type="text" name="password" id="password">
+        <input type="password" name="password" id="password">
 
         <label for="Password">ReEnter Password</label>
-        <input type="text" name="password" id="password">
+        <input type="password" name="conform" id="conform" onkeyup="checkpsw()">
+        <button class="btnBlack">signup</button>
 
-        <button class="btnBlack">Login</button>
+    <script>
+            function checkpsw(){
+                const psw1 = document.querySelector("#password").value;
+                const psw2 = document.querySelector("#conform").value;
+                const btn = document.querySelector('.btnBlack');
+                console.log(psw1);
+                console.log(psw2);
+                let msg = document.querySelector(".msg");
+                msg.innerHTML = "Matching psw";
+
+                if(psw1 == psw2){
+                        msg.innerHTML = "Matching psw";
+
+                }else{
+                    msg.innerHTML = "Password is not matching";
+
+                }
+            }
+    </script>
     </form>
-    
+    <p class="msg"></p>
 </div>

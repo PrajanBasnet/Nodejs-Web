@@ -3,6 +3,8 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const Blog = require('./server/module/Blog');
+const Admin = require('./server/module/admin');
+
 
 const bodyParser = require("body-parser");
 const adminroute = require('./server/routes/admin');
@@ -12,10 +14,7 @@ const postRouter = require('./server/routes/postRoute');
 
 
 
-
 const expressLayout = require('express-ejs-layouts');
-
-
 const connectDB = require('./server/config/db');
 
 const app = express();
@@ -28,13 +27,12 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 connectDB();
 
+//Routes
 app.use(indexRoute);
 app.use(postRouter);
 app.use(aboutDlt);
 app.use(adminroute);
 
-app.get('/ww',(req,res)=>{
-  res.render('index');
-})
+
 
 app.listen(3000);

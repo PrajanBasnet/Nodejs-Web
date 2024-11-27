@@ -1,9 +1,6 @@
 const Blog = require('../module/Blog');
 const router = require('express').Router();
 
-router.get('/postBlog',async (req,res)=>{
-res.render('post');
-});
 
 router.post('/postBlog',async (req,res)=>{
     let title = req.body.title;
@@ -22,7 +19,7 @@ router.post('/postBlog',async (req,res)=>{
         
       });
       newBlog.save();
-      res.send('ww');
+      res.redirect('about');
       
     }
   });

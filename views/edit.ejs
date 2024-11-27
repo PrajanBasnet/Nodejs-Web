@@ -1,0 +1,15 @@
+
+<div class="formContainer">
+
+    <form action="/updateReal" method="POST">
+        <input type="hidden" name="id" value="<%=data.id %>">
+        <label for="Title">Title</label>
+        <input type="text" name="title" id="title" value="<%= data.title %>" >
+        <label for="author">Author</label>
+        <input type="text" name="author" id="author" value="<%=data.author %>">
+        <label for="content">Content</label>
+        <input type="text" name="content" id="content" value="<%= data.content %>"><br>
+        <button class="btnBlack">submit</button>
+    </form>
+
+</div>
